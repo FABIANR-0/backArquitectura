@@ -13,5 +13,5 @@ const config = {
 export const exports={
     port : process.env.PORT || 3000,
     postgres : config,
-    secret : process.env.SECRET_KEY
+    secret : 'FRC14MFAU02'
 }
