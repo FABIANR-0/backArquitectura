@@ -5,7 +5,9 @@ export const login = async (req, res) =>{
     try{
         const access = req.body;
         let data = await  getUsuario(access); 
+        console.log(data)
         if(!data[0]){
+            console.log("entrar error")
             throw new Error("Credenciales no válidas");
         }
         res.status(200).json({
