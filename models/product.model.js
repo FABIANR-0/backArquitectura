@@ -1,9 +1,9 @@
 import pgService from "../services/pg.services.js";
 
-export const getProductModel = async() =>{
+export const getProductModel = async(userId) =>{
     const pg = new pgService();
     try{
-        const products = await pg.connection.query("select * from product");
+        const products = await pg.connection.query(`select * from product where id_user = $1`,[userId]);
         if (products[0]) {
             return {success:"Productos encontrados", status:200, data:products} ;
         }

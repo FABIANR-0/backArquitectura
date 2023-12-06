@@ -5,7 +5,7 @@ import { prodcutValidator } from "../validators/product.validators.js";
 
 const router = Router();
 
-router.get("/"/*,validate(prodcutValidator)*/, getProduct);
+router.get("/all/:userId"/*,validate(prodcutValidator)*/, getProduct);
 router.get("/:productId"/*,validate(prodcutValidator)*/, getProductById);
 router.delete("/:productId"/*,validate(prodcutValidator)*/, deleteProduct);
 router.post("/"/*,validate(prodcutValidator)*/, saveProduct);

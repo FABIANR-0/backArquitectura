@@ -2,7 +2,8 @@ import { getProductModel, deleteProductModel, createProductModel, updateProductM
 
 export const getProduct = async (req,res) => {
     console.log("Get products");
-    let data = await getProductModel();
+    const userId = req.params.userId;
+    let data = await getProductModel(userId);
     res.status(data.status).send(data);
 }
 
